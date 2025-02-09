@@ -1,4 +1,28 @@
 // script.js
+// Get elements
+// Function to open the popup based on the unique ID of the popup
+function openPopup(popupId) {
+  document.getElementById(popupId).style.display = "block";
+}
+
+// Function to close the popup based on the unique ID of the popup
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = "none";
+}
+
+// Close popup when clicking outside the popup content
+window.addEventListener('click', function(event) {
+  const popup1 = document.getElementById("popup-1");
+  const popup2 = document.getElementById("popup-2");
+  if (event.target === popup1) {
+      popup1.style.display = "none";
+  }
+  if (event.target === popup2) {
+      popup2.style.display = "none";
+  }
+});
+// Show popup on click
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -89,4 +113,29 @@ function revealSections() {
 }
 
 window.addEventListener('scroll', revealSections);
+ 
+    const wrapper = document.querySelector('.certify-wrapper');
+    const images = document.querySelectorAll('.certify-image-container');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100; // Calculate the translateX value
+        wrapper.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+
+
+
 
