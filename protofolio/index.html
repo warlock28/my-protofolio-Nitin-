@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY WEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,7 @@
 <body class="w3-black">
 
     <!-- Sidebar Navigation -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" id="desktopNavbar">
         <img src="image/TT.webp" style="width:100%">
         <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-">
             <i class="fa fa-home w3-xxlarge"></i>
@@ -42,15 +43,28 @@
         </a>
     </nav>
 
-    <!-- Top Navigation for Small Screens -->
-    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-            <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-            <a href="#abou" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-            <a href="#certification" class="w3-bar-item w3-button" style="width:25% !important">CERTIFY</a>
-            <a href="#contac" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-        </div>
+<!-- Top Navigation for Small Screens -->
+    <div class="responsive-navbar" id="myNavbar">
+        <a href="#home" class="nav-item">
+          <i class="fa fa-home"></i>
+          <span>HOME</span>
+        </a>
+        <a href="#abou" class="nav-item">
+           <i class="fa fa-user"></i>
+           <span>ABOUT</span>
+        </a>
+        <a href="#certification" class="nav-item">
+           <i class="fa fa-certificate"></i>
+           <span>CERTIFY</span>
+        </a>
+        <a href="#contac" class="nav-item">
+           <i class="fa fa-envelope"></i>
+           <span>CONTACT</span>
+        </a>
     </div>
+
+
+
     <div class="main-containe w3-padding-large" id="home">
         <!-- Text Container -->
         <div class="text-containe animated-text">
@@ -138,6 +152,18 @@
                 <li><i class="fas fa-rocket"></i>Gaining experience in ethical hacking techniques to find and report bugs before they become threats..</li>
                 <li><i class="fas fa-users"></i>Focused on developing skills in basic security tools and bug-hunting methods to protect digital assets..</li>
             </ul>
+            <button class="read-more-btn"  onclick="openPopup('popup-1')">Read More</button>
+        </div>
+        <div id="popup-1" class="popup">
+            <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popup-1')">&times;</span>
+            <h2>Technologies</h2>
+            <ul>
+                <li><i class="fas fa-code"></i><strong>Languages:</strong> Python, Java-Script</p></li>
+                <li><i class="fas fa-cogs"></i><strong>Frameworks:</strong>Flask, React</p></li>
+                <li><i class="fas fa-tools"></i><strong>Tools:</strong>Wireshark, Metasploit, Kali Linux</p></li>
+            </ul>
+            </div>
         </div>
     </div>
 
@@ -151,6 +177,18 @@
                 <li><i class="fas fa-rocket"></i>Skilled in HTML, CSS, and JavaScript to build interactive and visually appealing web interfaces. </li>
                 <li><i class="fas fa-users"></i>Always learning new frameworks and tools to improve the user experience and functionality of web applications.</li>
             </ul>
+            <button class="read-more-btn"  onclick="openPopup('popup-2')">Read More</button>
+        </div>
+        <div id="popup-2" class="popup">
+            <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popup-2')">&times;</span>
+            <h2>Technologies</h2>
+            <ul>
+                <li><i class="fas fa-code"></i><strong>Languages:</strong> HTML5,CSS3,Tailwind</p></li>
+                <li><i class="fas fa-cogs"></i><strong>Frameworks:</strong>Flask, React</p></li>
+                <li><i class="fas fa-tools"></i><strong>Tools:</strong>Git & Github, Docker, VS Code</p></li>
+            </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -164,8 +202,8 @@
         </div>
         <!-- Project Info (Right) -->
         <div class="my-sub-container my-info-right">
-            <h2><i class="fas fa-laptop-code"></i> Project 1 Title</h2>
-            <p><i class="fas fa-info-circle"></i> Brief summary of Project 1. This is where you describe the project, its purpose, and the technologies used.</p>
+            <h2><i class="fas fa-laptop-code"></i>Online Course Platform </h2>
+            <p><i class="fas fa-info-circle"></i> This project is a prototype of a course-selling and teaching platform, built using HTML, CSS, and JavaScript. It showcases a responsive and user-friendly interface </p>
             <a href="findex.html" target="_blank" class="my-btn">View Project <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
@@ -174,8 +212,8 @@
     <div class="my-project-row">
         <!-- Project Info (Left, Below) -->
         <div class="my-sub-container my-info-left">
-            <h2><i class="fas fa-mobile-alt"></i> Project 2 Title</h2>
-            <p><i class="fas fa-info-circle"></i> Brief summary of Project 2. Describe the second project, its key features, and the technologies used.</p>
+            <h2><i class="fas fa-mobile-alt"></i>Food Selling Project</h2>
+            <p><i class="fas fa-info-circle"></i>This project is a food-themed website prototype, designed using HTML, CSS, and JavaScript. It features an appealing and interactive interface, showcasing menus, recipes, or food-related content in a visually engaging manner</p>
             <a href="#" class="my-btn">View Project <i class="fas fa-arrow-right"></i></a>
         </div>
         <!-- Project Image (Right, Below) -->
@@ -198,37 +236,46 @@
                 <img src="image/linux.webp" alt="Image 1" class="certify-image">
             </a>
             <div class="certify-caption">
-                <h3 class="certify-image-title">Image Title </h3>
-                <p class="certify-image-description">Description for Image 1.</p>
+           
+                <p class="certify-image-description">"Linux Basics introduce the core concepts of the Linux operating system, including commands, file management, and system navigation"</p>
+            </div>
+        </div>
+        <div class="certify-image-container">
+            <a href="https://www.credly.com/users/nitin-kumar.4b42c0d5" target="_blank" rel="noopener noreferrer">
+                <img src="image/network.webp" alt="Image 1" class="certify-image">
+            </a>
+            <div class="certify-caption">
+           
+                <p class="certify-image-description">"The Networking Basics course on Cisco Networking Academy covers fundamental networking concepts, including IP addressing, subnetting, and network security. "</p>
             </div>
         </div>
         <!-- Image 2 -->
         <div class="certify-image-container">
-            <a href="https://your-official-website.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.com" target="_blank" rel="noopener noreferrer">
                 <img src="image/foundation.webp" alt="Image 2" class="certify-image">
             </a>
             <div class="certify-caption">
-                <h3 class="certify-image-title">Image Title</h3>
-                <p class="certify-image-description">Description for Image 2.</p>
+
+                <p class="certify-image-description">Cyber Security Foundation equips individuals with essential knowledge and skills to protect systems, data, and networks from cyber threats</p>
             </div>
         </div>
         <!-- Repeat images for infinite loop effect -->
         <div class="certify-image-container">
-            <a href="https://your-official-website.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.credly.com/users/nitin-kumar.4b42c0d5" target="_blank" rel="noopener noreferrer">
                 <img src="image/intro.webp" alt="Image 1" class="certify-image">
             </a>
             <div class="certify-caption">
-                <h3 class="certify-image-title">Image Title</h3>
-                <p class="certify-image-description">Description for Image 1.</p>
+ 
+                <p class="certify-image-description">Cybersecurity is the practice of protecting systems, networks, and data from digital attacks, ensuring privacy, integrity, and availability in the cyber world</p>
             </div>
         </div>
         <div class="certify-image-container">
-            <a href="https://your-official-website.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.credly.com/users/nitin-kumar.4b42c0d5" target="_blank" rel="noopener noreferrer">
                 <img src="image/os.webp" alt="Image 2" class="certify-image">
             </a>
             <div class="certify-caption">
-                <h3 class="certify-image-title">Image Title</h3>
-                <p class="certify-image-description">Description for Image 2.</p>
+
+                <p class="certify-image-description">Operating System Basics cover the fundamental concepts that enable a computer to manage hardware, software, and resources efficiently</p>
             </div>
         </div>
         <div class="certify-image-container">
@@ -236,20 +283,21 @@
                 <img src="image/ai.webp" alt="Image 2" class="certify-image">
             </a>
             <div class="certify-caption">
-                <h3 class="certify-image-title">Image Title</h3>
-                <p class="certify-image-description">Description for Image 2.</p>
+
+                <p class="certify-image-description">Generative AI Basics explore how AI creates content, like text, images, or audio, using machine learning and neural networks</p>
             </div>
         </div>
         <div class="certify-image-container">
-            <a href="https://your-official-website.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.credly.com/users/nitin-kumar.4b42c0d5" target="_blank" rel="noopener noreferrer">
                 <img src="image/eng.webp" alt="Image 2" class="certify-image">
             </a>
             <div class="certify-caption">
-                <h3 class="certify-image-title">Image Title</h3>
-                <p class="certify-image-description">Description for Image 2.</p>
+                <p class="certify-image-description">English for IT focuses on developing communication skills for understanding and discussing technology and technical concepts in the IT field</p>
             </div>
         </div>
     </div>
+     <!-- Navigation Buttons -->
+     
 </div>
 
 
@@ -299,7 +347,7 @@
     <div class="social-media-icons">
         <a href="https://www.instagram.com/mr_nitin.28/" target="_main"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@nitin.a2z" target="_main"><i class="fab fa-youtube"></i></a>
-        <a href="https://x.com/NitinKush7280?t=VtCfuKYksjrfNiSaFYGCsg&s=09" target="_main"><i class="fab fa-twitter"></i></a>
+        <a href="https://x.com/NitinKumar18186" target="_main"><i class="fab fa-twitter"></i></a>
         <a href="https://www.linkedin.com/feed/" target="_main"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/warlock28" target="_main"><i class="fab fa-github"></i></a>
         <a href="https://www.snapchat.com/add/mr_nitin7280?share_id=2vrRDojWZQM&locale=en-US" target="_main"><i class="fab fa-snapchat"></i></a>
